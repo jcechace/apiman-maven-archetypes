@@ -1,0 +1,15 @@
+{
+  "id" : "${policyId}",
+  "name" : "${policyName}",
+  "description" : "",
+  "policyImpl" : "plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/${package}.${policyClass}",
+  "icon" : null,
+  "formType" : "JsonSchema",
+  "templates" : [
+    {
+      "language" : null,
+      "template" : ""
+    }
+  ],
+  "form" : "schemas/${policyId}Def.schema"
+}

@@ -1,0 +1,6 @@
+{
+  "frameworkVersion" : 1.0,
+  "name" : "${policyName}",
+  "description" : "This plugin adds the ${policyName} to your Apiman installation",
+  "version" : "${project.version}"
+}
