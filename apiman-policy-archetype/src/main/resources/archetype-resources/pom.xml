@@ -19,6 +19,12 @@
     <!-- Apiman dependencies (must be excluded from the WAR) -->
     <dependency>
       <groupId>io.apiman</groupId>
+      <artifactId>apiman-common-logging-core</artifactId>
+      <version>${version.io.apiman}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.apiman</groupId>
       <artifactId>apiman-gateway-engine-beans</artifactId>
       <version>${version.io.apiman}</version>
       <scope>provided</scope>
