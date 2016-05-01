@@ -1,47 +1,46 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-    <groupId>io.apiman.plugins</groupId>
-    <artifactId>apiman-plugins</artifactId>
-    <version>${apimanVersion}</version>
-  </parent>
 
   <groupId>${groupId}</groupId>
   <artifactId>${artifactId}</artifactId>
-  <version>${version}</version>
+  <version>${apimanVersion}</version>
   <packaging>jar</packaging>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <version.war.plugin>2.5</version.war.plugin>
+    <version.io.apiman>${apimanVersion}</version.io.apiman>
+  </properties>
+
   <dependencies>
-    <!-- apiman dependencies (must be excluded from the WAR) -->
+    <!-- Apiman dependencies (must be excluded from the WAR) -->
     <dependency>
       <groupId>io.apiman</groupId>
       <artifactId>apiman-gateway-engine-beans</artifactId>
+      <version>${version.io.apiman}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>io.apiman</groupId>
       <artifactId>apiman-gateway-engine-core</artifactId>
+      <version>${version.io.apiman}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>io.apiman</groupId>
       <artifactId>apiman-manager-api-core</artifactId>
+      <version>${version.io.apiman}</version>
       <scope>provided</scope>
     </dependency>
 
-    <!-- apiman test framework -->
+    <!-- Test dependencies -->
     <dependency>
       <groupId>io.apiman</groupId>
       <artifactId>apiman-test-policies</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- junit -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <version>${version.io.apiman}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -51,6 +50,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
+        <version>${version.war.plugin}</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
           <webResources>

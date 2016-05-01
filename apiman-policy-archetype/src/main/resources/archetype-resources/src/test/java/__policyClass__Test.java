@@ -1,4 +1,4 @@
-package ${package}
+package ${package};
 
 /**
  * Unit test for ${policyName}
